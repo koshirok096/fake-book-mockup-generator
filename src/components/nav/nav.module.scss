@@ -1,0 +1,32 @@
+@use "../../styles/global.scss";
+
+a{
+    color: white!important;
+    &:hover{
+        color: white!important;
+    }
+}
+
+span a{
+    color: red!important;
+    &:hover{
+        color: red!important;
+        text-decoration:underline!important;
+    }
+}
+
+
+.navwrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: global.$header-height;
+    margin: auto;
+    h2{
+        font-family: Bungee;
+    }
+    &_btnwrap{
+    }
+  }

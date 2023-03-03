@@ -1,0 +1,215 @@
+// /*********************************************
+// Setup
+// **********************************************/
+
+// color palette - these colors will be the color swatches of the Colors section
+
+$color-1: rgb(51, 51, 51); // main black
+$color-2: rgb(244, 244, 244); // gray white
+$color-3: rgb(50, 149, 229); // 
+$color-4: rgb(216, 216, 216); // border
+
+// font size - these sizes used for font-size in any font here
+
+$headsize-1: 5rem;
+$headsize-2: 3rem;
+$headsize-3: 2rem;
+$headsize-4: 1.6rem;
+$text-size-1: 1.0rem;
+$text-size-2: 0.9rem;
+$text-size-3: 0.8rem;
+$text-size-4: 0.7rem;
+
+// fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Bungee&family=Bungee+Hairline&family=Bungee+Inline&family=Bungee+Outline&family=Bungee+Shade&family=Bungee+Spice&family=Cinzel&family=Gloock&family=Merienda&family=Montserrat&family=Oxygen:wght@300;400;700&family=Permanent+Marker&family=Playfair+Display&family=Rampart+One&family=Roboto&family=Tilt+Prism&family=Ubuntu&display=swap');
+
+$primary-font: 'Oxygen', sans-serif;
+// $secondary-font: 'Corinthia', sans-serif;
+// $thirdly-font: "Roboto Condensed";
+// $fourthly-font: "Dancing Script";
+// $fifthly-font: "Sacramento";
+
+// font-family: 'Bungee', cursive;
+// font-family: 'Bungee Hairline', cursive;
+// font-family: 'Bungee Inline', cursive;
+// font-family: 'Bungee Outline', cursive;
+// font-family: 'Bungee Shade', cursive;
+// font-family: 'Bungee Spice', cursive;
+
+
+// margin
+
+$header-height:110px;
+
+// responsive
+
+$media_q_1: 1920px; //
+$media_q_2: 1366px; //
+$media_q_3: 1000px; //
+$media_q_4: 800px; //
+$media_q_5: 600px; //
+
+@mixin media_1920_to_1366_w {
+    @media (min-width: ($media_q_1)) {
+        @content;
+    }
+}
+@mixin media_1366_to_1000_w {
+    @media (max-width: ($media_q_2)) {
+        @content;
+    }
+}
+@mixin media_1000_to_800_w {
+  @media (max-width: ($media_q_3)) {
+      @content;
+  }
+}
+@mixin media_800_to_600_w {
+    @media (max-width: ($media_q_4)) {
+        @content;
+    }
+}
+@mixin media_600_to_bottom_w {
+    @media (max-width: ($media_q_5)) {
+        @content;
+    }
+}
+
+// extend
+
+.flex-centering {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+}
+
+.opacity {
+    opacity: 0.95;
+}
+
+// /*********************************************
+// General Styling
+// **********************************************/
+
+html {
+    // max-width: $media_1366w;
+    margin: 0 auto;
+    position: relative; /* Fix for absolute positioning */
+}
+
+body {
+    // background-color: $color-3;
+    color: $color-1;
+    margin: 0 auto;
+    @include media_1920_to_1366_w {
+        // margin-left: $base_vw * 2;
+        // margin-right: $base_vw * 2;
+        // margin-top: 0;
+        // margin-bottom: 0;
+    }
+    @include media_1366_to_1000_w {
+        // margin-left: 2vw;
+        // margin-right: 2vw;
+        // margin-top: 0;
+        // margin-bottom: 0;
+    }
+}
+
+h1,
+h2 {
+    font-family: $primary-font;
+    font-weight: bold;
+    @include media_1920_to_1366_w {
+        // font-size: $base_vw * 4.2;
+        // line-height: $base_vw * 5.2;
+        // letter-spacing: ($base_vw/3);
+    }
+    @include media_1366_to_1000_w {
+        // font-size: 4.2vw;
+        // line-height: 5.2vw;
+        // letter-spacing: .3vw;
+    }
+    @include media_800_to_600_w {
+        // font-size: 5.2vw;
+        // line-height: 6.2vw;
+        // letter-spacing: .6vw;
+    }
+}
+h3,
+h4 {
+    font-family: $primary-font;
+    font-weight: bold;
+    @include media_1920_to_1366_w {
+        // font-size: $base_vw * 3.4;
+        // line-height: $base_vw * 4;
+        // letter-spacing: ($base_vw/-10);
+    }
+    @include media_1366_to_1000_w {
+        // font-size: 3.4vw;
+        // line-height: 4vw;
+        // letter-spacing: -.1vw;
+    }
+}
+
+p {
+    font-family: $primary-font;
+    color: $color-1;
+    @include media_1920_to_1366_w {
+        // font-size: $base_vw * 1.5;
+        // letter-spacing: ($base_vw/10);
+        // margin: 0;
+    }
+    @include media_1366_to_1000_w {
+        // font-size: 1.5vw;
+        // letter-spacing: .1vw;
+    }
+    @include media_800_to_600_w {
+        // font-size: 2vw;
+        // letter-spacing: .2vw;
+    }
+    // @include media_under_667_w {
+    //     font-size: 2.1vw;
+    //     letter-spacing: .21vw;
+    // };
+}
+
+a{
+    text-decoration: none!important;
+    &:hover{
+        color: unset!important;
+    }
+}
+
+::selection {
+  color: white;
+  background-color: $color-3;
+}
+
+//
+
+#mockmodalwrap{
+margin: 0!important;
+.modal-content{
+    width: 100vw!important;
+    height: 100vh;
+    margin: auto!important;
+    .modal-body{
+    display: flex!important;
+    flex-direction: row!important;
+    justify-content: space-around!important;
+    align-items: center!important;
+    }  
+}
+}
+    
